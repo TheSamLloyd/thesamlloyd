@@ -15,11 +15,21 @@ import { Link } from "react-router-dom"
 const drawerWidth = 240;
 
 const styles = theme => ({
+  menuItem: {
+    '&:focus': {
+      backgroundColor: theme.palette.primary.main,
+      '& $primary, & $icon': {
+        color: theme.palette.common.white,
+      },
+    },
+  },
+  primary: {},
+  icon: {},
   root: {
     flexGrow: 1,
   },
   appFrame: {
-    height: 430,
+    height: 'auto',
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -57,9 +67,9 @@ class PermanentDrawer extends React.Component {
         <div className={classes.toolbar} />
         <Divider />
         <MenuList>
-          <Link to="/about"><MenuItem><ListItemText primary="About" /></MenuItem></Link>
-          <Link to="/portfolio"><MenuItem><ListItemText primary="Portfolio" /></MenuItem></Link>
-          <Link to="/contact"><MenuItem><ListItemText primary="Contact" /></MenuItem></Link>
+          <Link to="/about"><MenuItem className={classes.menuItem}><ListItemText classes={{ primary: classes.primary }} primary="About" /></MenuItem></Link>
+          <Link to="/portfolio"><MenuItem className={classes.menuItem}><ListItemText classes={{ primary: classes.primary }} primary="Portfolio" /></MenuItem></Link>
+          <Link to="/contact"><MenuItem className={classes.menuItem}><ListItemText classes={{ primary: classes.primary }} primary="Contact" /></MenuItem></Link>
         </MenuList>
       </Drawer>
     );
