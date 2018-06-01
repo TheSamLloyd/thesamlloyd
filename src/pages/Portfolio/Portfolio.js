@@ -35,6 +35,43 @@ const webprojects = [
     gitref:"https://github.com/TheSamLloyd/TimedTrivia"
   }
 ]
+
+const acadProjects = [
+  {name: "Hermite Polynomials",
+  desc: "For my senior presentation, I wrote this paper on a new approximation method I discovered using orthogonal polynomials."
+},
+  {
+    name: "m-Bonacci Series",
+    desc: "In this paper, I attempted to find a closed-form function for the \"Golden Ratio\" of any given m-Bonacci series"
+  },
+  {
+    name: "Reconstruction of Observed Distributions",
+    desc: "For a forthcoming paper, I developed a method of reconstructing a probability density function based on moments recovered from data."
+  },
+  {
+    name: "Lill's Method",
+    desc: "While trying to solve the m-Bonacci series problem, I wrote a Mathematica notebook implementing Lill's method for solving polynomials."
+  }
+]
+
+const miscProjects = [
+  {name: "Salvage EP",
+  desc: "Sound design & scoring for friends' game design project -- while the game didn't fully manifest, the soundtrack is available.",
+    href:"http://cavalcadeofsin.bandcamp.com/album/salvage-ost",
+    src:"salvage.jpg"
+},
+  {name: "Soundcloud",
+  desc:"Assorted music projects & fragments from the past 8 years, working with pals under the moniker The Cavalcade of Sin",
+  src:"cavalcade.jpg",
+  href:"https://soundcloud.com/thecavalcade"
+  },
+  {
+    name: "Homebrew",
+    desc: "I homebrew a variety of beers, meads, and ciders, too!",
+    src: "2udy.jpg"
+  }
+
+]
 const Portfolio = () => (
   <div>
     <Typography variant="headline" gutterBottom align="left">Web Design</Typography>
@@ -44,18 +81,12 @@ const Portfolio = () => (
     <Divider />
     <Typography variant="headline" gutterBottom align="left">Academic Work</Typography>
     <Grid container spacing={16}>
-      <Project title="Tryp.Ninja">Good Project</Project>
-      <Project title="Elbie">Good Project</Project>
-      <Project title="Societé">Good Project</Project>
-      <Project title="?">Good Project</Project>
+      {acadProjects.map((project, id) => <Project title={project.name} href={project.href} src={project.src} key={id}>{project.desc}</Project>)}
     </Grid>
     <Divider />
     <Typography variant="headline" gutterBottom align="left">Extracurriculars</Typography>
     <Grid container spacing={16}>
-      <Project title="Tryp.Ninja">Good Project</Project>
-      <Project title="Elbie">Good Project</Project>
-      <Project title="Societé">Good Project</Project>
-      <Project title="?">Good Project</Project>
+      {miscProjects.map((project, id) => <Project title={project.name} href={project.href} src={project.src} key={id}>{project.desc}</Project>)}
     </Grid>
   </div>
 )

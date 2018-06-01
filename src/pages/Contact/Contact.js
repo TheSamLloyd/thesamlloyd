@@ -1,7 +1,8 @@
 import React from "react"
+import { Typography } from "@material-ui/core";
 
 const Contact = () => (
-  null
+  <Typography>Hey</Typography>
 )
 
 export default Contact
