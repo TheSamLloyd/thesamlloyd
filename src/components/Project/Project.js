@@ -11,11 +11,17 @@ import Grid from "@material-ui/core/Grid"
 const styles = {
   card: {
     maxWidth: 345,
+    height: '100%',
+    position: 'relative'
   },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
+  button:{
+    position:"absolute",
+    bottom: -5
+  }
 };
 
 function Project(props) {
@@ -23,27 +29,30 @@ function Project(props) {
   return (
     <Grid item xs ={6} s={4} md={3}>
       <Card className={classes.card}>
-        <CardMedia
+        <a href={props.href}>
+          <CardMedia
           className={classes.media}
           image={`/images/${props.src}`}
           title={props.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="headline" component="h2">
-            {props.title}
-          </Typography>
-          <Typography component="p">
-            {props.children}
-          </Typography>
-        </CardContent>
-        {/* <CardActions>
-          <Button size="small" color="primary">
-            Share
+          />
+        </a>
+          <CardContent>
+            <Typography gutterBottom variant="headline" component="h2">
+              <a href={props.href}>
+              {props.title}
+              </a>
+            </Typography>
+            <Typography component="p">
+              {props.children}
+            </Typography>
+            <br/>
+          </CardContent>
+        {props.gitref ? 
+          <CardActions className={classes.button}>
+          <Button size="small" color="primary" position="absolute">
+            <a href={props.gitref}>View on GitHub</a>
           </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions> */}
+          </CardActions> : null}
       </Card>
     </Grid>
   );
