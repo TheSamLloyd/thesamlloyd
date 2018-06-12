@@ -4,11 +4,11 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import GenreButton from "./genreButton"
 
-const styles = {
+const styles = theme=>({
   root: {
     flexGrow: 1,
     marginBottom: 24
@@ -20,7 +20,7 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
-};
+});
 
 function ButtonAppBar(props) {
   const { classes } = props;
@@ -32,9 +32,14 @@ function ButtonAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            Title
+            Sam Lloyd
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Typography>
+            {props.allGenres.map(genre=>{
+              return <GenreButton genre={genre} action={props.cGenres.includes(genre) ? props.dropGenre : props.setGenre} display={props.cGenres.includes(genre)}/> 
+            })}
+            <GenreButton genre="all" action={props.clearGenre}/>
+          </Typography>
         </Toolbar>
       </AppBar>
     </div>
