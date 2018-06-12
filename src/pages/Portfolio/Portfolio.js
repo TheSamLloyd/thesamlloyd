@@ -1,32 +1,23 @@
-import React from "react"
+import React from 'react'
 import Project from "../../components/Project"
 import { Grid, Typography, Divider } from "@material-ui/core"
 
-const Portfolio= ()=>(
+
+const Portfolio = () => (
   <div>
     <Typography variant="headline" gutterBottom align="left">Web Design</Typography>
-    <Divider/>
     <Grid container spacing={16}>
-      <Project title="Tryp.Ninja" src="trypninja.png">Good Project</Project>
-      <Project title="Elbie" src="elbie.png">Discord bot designed to run rules-lite TTRPGs.</Project>
-      <Project title="Societé">Good Project</Project>
-      <Project title="?">Good Project</Project>
+      {webprojects.map((project,id)=><Project title={project.name} href={project.href} src={project.src} key={id} gitref={project.gitref}><code>{project.language}</code><br/>{project.desc}</Project>)}
     </Grid>
+    <Divider />
     <Typography variant="headline" gutterBottom align="left">Academic Work</Typography>
-    <Divider />
     <Grid container spacing={16}>
-      <Project title="Tryp.Ninja">Good Project</Project>
-      <Project title="Elbie">Good Project</Project>
-      <Project title="Societé">Good Project</Project>
-      <Project title="?">Good Project</Project>
+      {acadProjects.map((project, id) => <Project title={project.name} href={project.href} src={project.src} key={id}>{project.desc}</Project>)}
     </Grid>
-    <Typography variant="headline" gutterBottom align="left">Extracurriculars</Typography>
     <Divider />
+    <Typography variant="headline" gutterBottom align="left">Extracurriculars</Typography>
     <Grid container spacing={16}>
-      <Project title="Tryp.Ninja">Good Project</Project>
-      <Project title="Elbie">Good Project</Project>
-      <Project title="Societé">Good Project</Project>
-      <Project title="?">Good Project</Project>
+      {miscProjects.map((project, id) => <Project title={project.name} href={project.href} src={project.src} key={id}>{project.desc}</Project>)}
     </Grid>
   </div>
 )

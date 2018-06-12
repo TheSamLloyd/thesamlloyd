@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Elbie",
+    "genre": [
+      "web"
+    ],
+    "desc": "Elbie does stuff and i like her",
+    "src": "elbie.png"
+  },
+  {
+    "title": "Tryp.Ninja",
+    "genre": [
+      "web"
+    ],
+    "desc": "Elbie does stuff and i like her",
+    "src": "trypninja.PNG"
+  },
+  {
+    "title": "Societe",
+    "genre": [
+      "web"
+    ],
+    "desc": "Elbie does stuff and i like her",
+    "src": "societe.png"
+  },
+  {
+    "title": "React Memory Game",
+    "genre": [
+      "web"
+    ],
+    "desc": "Elbie does stuff and i like her",
+    "src": "reactmemory.png"
+  },
+  {
+    "title": "The Cavalcade of Sin",
+    "genre": [
+      "music"
+    ],
+    "desc": "Elbie does stuff and i like her",
+    "src": "cavalcade.jpg"
+  },
+  {
+    "title": "Salvage EP",
+    "genre": [
+      "music"
+    ],
+    "desc": "Elbie does stuff and i like her",
+    "src": "salvage.jpg"
+  }
+]
