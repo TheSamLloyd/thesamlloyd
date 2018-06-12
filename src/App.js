@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom'
-import pages from "./pages"
+import CardGrid from './components/CardGrid'
+import TitleBar from './components/Titlebar'
 import './App.css';
-import Menu from "./components/Menu"
+import { Divider } from '@material-ui/core';
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {genre:""}
+  }
+  setGenre(genre){
+    this.setState({genre:genre})
+  }
   render() {
     return (
       <div className="App">
-        <Router>
-          <Menu>
-          {/*content here*/}
-            <Route path="/about" component={pages.About}/>
-            <Route path="/portfolio" component={pages.Portfolio}/>
-            <Route path="/contact" component={pages.Contact}/>
-          </Menu>
-        </Router>
+        <div>
+          <TitleBar />
+        </div>
+        <div>
+        <CardGrid genre={this.state.genre}/>
+        </div>
+        {/* <Footer /> */}
       </div>
     );
   }
