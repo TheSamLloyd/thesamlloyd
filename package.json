@@ -1,6 +1,6 @@
 {
-  "name": "thesamlloyd.github.io",
-  "homepage": "https://thesamlloyd.github.io",
+  "name": "thesamlloyd",
+  "homepage": "https://thesamlloyd.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
