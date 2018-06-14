@@ -20,9 +20,8 @@ class App extends Component {
     let newList = this.state.genre.filter(genre=>genre!==newGenre)
     this.setState({genre:newList})
   }
-  triggerModal(card){
-    this.setState({modal:card, open:true})
-    console.log(card)
+  triggerModal(card, previous, next){
+    this.setState({modal:card, previous, next, open:true})
   }
   onClose(){
     this.setState({modal:null, open:false})

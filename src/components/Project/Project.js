@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from "@material-ui/core/Grid"
-const styles = {
+const styles = (theme)=>({
   card: {
     maxWidth: 345,
     position: 'relative',
@@ -39,7 +39,7 @@ const styles = {
   bottom: 0,
   opacity: 0.65,
   transition: "opacity 0.5s",
-  background: "DarkBlue",
+  background: theme.palette.primary.main,
   },
   overlay: {
   position: 'absolute',
@@ -52,10 +52,12 @@ const styles = {
   bottom: 0,
   opacity: 0,
   transition: "opacity 0.3s",
-  background: "DarkBlue"
+  background: theme.palette.primary.main
+  },
+  polygon:{
+    fill:theme.palette.secondary.main
   }
-}
-
+})
 class Project extends Component {
   constructor(props){
     super(props)
@@ -65,7 +67,6 @@ class Project extends Component {
   onMouseEnter(e){
     if (this.state.mouseOn) return
     this.setState({mouseOn:true})
-    console.log("Hello!")
   }
   onMouseLeave(e) {
     this.setState({mouseOn:false})
@@ -79,7 +80,7 @@ class Project extends Component {
           <CardContent className={classes.content}>
             <div className={this.state.mouseOn ? classes.overlayHover : classes.overlay}></div>
             <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg" style={{position:"relative"}}>
-            <polygon points="50,0 6.698,25, 6.698,75 50,100 93.3,75 93.3,25" fill="LightSkyBlue" stroke="white" opacity={.7}/>
+            <polygon points="50,0 6.698,25, 6.698,75 50,100 93.3,75 93.3,25" className={classes.polygon} stroke="white" opacity={.7}/>
               <foreignObject x="7.5" y="25" width="85" height="50">
               <Typography className={classes.title} variant="headline"xmlns="http://www.w3.org/1999/xhtml">{this.props.title}</Typography>
               </foreignObject>

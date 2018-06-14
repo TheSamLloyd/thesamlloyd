@@ -1,10 +1,57 @@
 [
   {
+    "title": "About Me",
+    "genre": [
+      "misc"
+    ],
+    "desc": [
+      "Hi! I'm Sam, and I'm a web developer! And a statistician! And a few other things, but mostly those first two.",
+      "I'm 24 -- I grew up in New Hampshire and I've lived there my whole life, except for when I was in Ithaca for school. During that time, I got my Bachelor's in Mathematics after studying statistics and economics, and picking up my fair share of computer science along the way."
+    ],
+    "gitref": "https://github.com/TheSamLloyd/",
+    "link": [
+      "samlloydj@gmail.com",
+      "mailto://samlloydj@gmail.com"
+    ],
+    "src": "presentation.jpg"
+  },
+  {
+    "title": "Work History",
+    "genre": [
+      "misc"
+    ],
+    "desc": [
+      "Sales Consulant, Best Buy, Newington, NH, Sep 2017 - May 2018",
+      "Cafe Server / Head Cashier, Barnes & Noble, Newington, NH, Feb 2017 - Sep 2017",
+      "Head Statistics / Economics Tutor, Ithaca College, Ithaca, NY, 2014-2016",
+      "Actuarial Product Development Intern, Ohio National Financial Services, Cincinnati, OH, May 2015 - Sep 2015"
+    ],
+    "link": [
+      "Resume",
+      "https://docs.google.com/document/d/1o5xAYGGlYvU69ql0Lg6uom7bASwBFpbu3OrpdPMBAQs/export?format=pdf"
+    ],
+    "src": "history.jpg"
+  },
+  {
+    "title": "Education",
+    "genre": [
+      "academic"
+    ],
+    "desc": [
+      "B.A. in Mathematics from Ithaca College (2016)",
+      "Certification in Full Stack Web Development, University of New Hampshire (2018)"
+    ],
+    "src": "ithaca.jpg"
+  },
+  {
     "title": "Elbie",
     "genre": [
       "web"
     ],
-    "desc": ["Elbie (LB) is a bot I wrote to help run our sessions of Dungeon World, a rules-lite tabletop RPG in the vein of Dungeons and Dragons. As feature creep is wont to do, she quickly was found to need more than just dice rolling, and is now capable of tracking character statistics using a MongoDB database. We also thought it might be nice if she could play a character's theme song on command, for example, so now audio capabilities are being added.","Elbie is a passion project of mine, and I'm very proud of her -- not only does she function, but her entire architecture is built to be as extensible as possible, allowing people to write their own modules for her and easily include them. Her current incarnation is the third complete rewrite of her."],
+    "desc": [
+      "Elbie (LB) is a bot I wrote to help run our sessions of Dungeon World, a rules-lite tabletop RPG in the vein of Dungeons and Dragons. As feature creep is wont to do, she quickly was found to need more than just dice rolling, and is now capable of tracking character statistics using a MongoDB database. We also thought it might be nice if she could play a character's theme song on command, for example, so now audio capabilities are being added.",
+      "Elbie is a passion project of mine, and I'm very proud of her -- not only does she function, but her entire architecture is built to be as extensible as possible, allowing people to write their own modules for her and easily include them. Her current incarnation is the third complete rewrite of her."
+    ],
     "src": "elbie.png",
     "role": "Solo project",
     "language": "Javascript, MongoDB",
@@ -16,7 +63,10 @@
     "genre": [
       "web"
     ],
-    "desc": "Elbie does stuff and i like her",
+    "desc": [
+      "For our final project in our Web Design Bootcamp, we designed a social-media-esque site called Tryp Ninja (\"tryp\" as in \"tryptych\", \"ninja\" as in \"we own the domain tryp.ninja\"). It allows users to curate \"Stories\" that are designed to be persistent, and can showcase events from as short as an afternoon to as long as a year. I have a timeline of my kitten's growth on there, for instance.",
+      "Tryp Ninja presented new challenges for us, and eventually involved working with Amazon S3 to host images, Google for login and basic user info, and Cloudinary for image distribution, on top of a React/Node.js framework. It was designed mobile-first, although the same actions are available on a computer as they are on a phone."
+    ],
     "src": "trypninja.PNG",
     "role": "Authentication, image processing, design",
     "language": "Javascript, mySQL",
@@ -25,27 +75,40 @@
     "heroku": "https://trypninja.herokuapp.com"
   },
   {
-    "title": "Societe",
+    "title": "Societé",
     "genre": [
       "web"
     ],
-    "desc": "Elbie does stuff and i like her",
-    "src": "societe.png"
+    "desc": [
+      "Societé Apothecary is a small business in Portsmouth, New Hampshire specializing in herbal remedies and teas, run by a former classmate. At the time, she needed a way to manage both raw parts (used to make products) and retail products themselves, as well as a method to track suppliers, costs, and so on. Working with a small team, we created a system capable of posting to a database from a dashboard, and using that database to update Shopify as a POS system. Additionally, we set up webhooks so that upon fulfilling an order, the database could stay in sync with Shopify.",
+      "The dashboard is, unsuprisingly, not public, but as it is an open-source project, the code is visible on GitHub."
+    ],
+    "src": "societe.png",
+    "role": "Authentication, back-end, API design, Shopify integration",
+    "language": "Javascript, mySQL",
+    "date": "2018",
+    "gitref": "https://github.com/JoyCurthBlisso/Societe/"
   },
   {
     "title": "React Memory Game",
     "genre": [
       "web"
     ],
-    "desc": "Elbie does stuff and i like her",
-    "src": "reactmemory.png"
+    "desc": [
+      "This is a \"game\" built with React (using create-react-app for node.js) based on testing one's memory. There are 12 provided images (iconic albums from the 80s), and the goal is to click each one without repeating any of them. With each click, your score will update -- if it's a previously-unclicked album, it will increment by one. If you have previously clicked it, your score will return to 0. You can see your \"best\" score in the info bar as well.",
+      "A personal icon, James Murphy of LCD Soundsystem famously noted in \"Losing My Edge\" that the kids he sees \"coming up from behind\" in the music scene have \"borrowed nostalgia for the unremembered 80s\", which was such a damning indictment of my interests that it could have been written about me specfically."
+    ],
+    "src": "reactmemory.png",
+    "gitref": "https://github.com/TheSamLloyd/react-memory",
+    "heroku": "http://react-memory-80s.herokuapp.com"
   },
   {
     "title": "Hermite Polynomials",
     "genre": [
       "academic"
     ],
-    "desc": "Senior project in college"
+    "desc": "Senior project in college",
+    "src":"hermite.png"
   },
   {
     "title": "Lill's Method",
@@ -66,20 +129,41 @@
     "genre": [
       "music"
     ],
-    "desc": "Elbie does stuff and i like her",
-    "src": "cavalcade.jpg"
+    "desc": [
+      "The Cavalcade of Sin (formerly Sam Lloyd & The Cavalcade of Sin, before it grew to include more members than just me) was/is the name I worked under when making and performing music for several years. This photo was taken during one of our shows at The Nines, in Ithaca. We fancied ourselves a sort of goth disco revival, which, despite the fact that we played a mean synthesizer and often appeared in a cloud of glitter, meant that the college crowd didn't really \"get\" us. But it was still a good time.",
+      "Since the amiable separation of the band (two to three to four people, depending on who, how, and when you're counting), I have continued making music, but have been somewhat reticent to continue using the Cavalcade's name, for both personal and historical reasons. Despite our separation, I do keep my gold-studded shirt pressed and ready in case some sort of goth-disco emergency necessitated our reappearance."
+    ],
+    "src": "cavalcade.jpg",
+    "date": "2013-2018(?)",
+    "link": [
+      "Soundcloud",
+      "https://soundcloud.com/thecavalcade"
+    ]
   },
   {
-    "title": "Salvage EP",
+    "title": "Salvage OST",
     "genre": [
       "music"
     ],
-    "desc": "Elbie does stuff and i like her",
-    "src": "salvage.jpg"
+    "desc": [
+      "\"Salvage\" was a game designed by some friends of ours, who conceived of a game set in space, about an astronaut struggling to find the materials needed to repair his ship after a deadly raid by space pirates. They asked me if I would be willing to provide music and sound design. Although the game did eventually come to fruition, it never really manifested in the ways the designers were hoping for. Despite this, the soundtrack did entirely get made, and it remains something I'm proud of.",
+      "The process of making the soundtrack let me explore sounds and textures in a way I hadn't previously allowed myself the freedom to do. The challenge of conveying the feel of a level by scoring it was a new one for me, and there are a few touches I'm particularly proud of -- the closing theme is the opening theme with added instrumentation and percussion, for example, and the drum sequencing was borrowed from another project of mine one of the designers particularly admired (a seven-minute ambient disco version of Bruce Springsteen's \"I'm on Fire\" (yes.))",
+      "I have also contributed music to a film currently in production whose release is anticipated in early  2019, set in a near-future cyberpunk arcade."
+    ],
+    "src": "salvage.jpg",
+    "date": "2015",
+    "link": [
+      "Bandcamp",
+      "http://cavalcadeofsin.bandcamp.com/album/salvage-ost"
+    ],
+    "inset": true
   },
   {
-    "title":"Landon House Brewing",
-    "genre":["misc"],
-    "src":"2udy.jpg"
+    "title": "Landon House Brewing",
+    "genre": [
+      "misc"
+    ],
+    "src": "2udy.jpg",
+    "inset": true
   }
 ]

@@ -15,8 +15,6 @@ const styles = theme=>({
     flex: 1,
   },
   menuButton: {
-    marginRight: 0,
-    marginBottom: 24,
     display: 'inline-block'
   },
 });

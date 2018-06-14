@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import ImagePalette from 'react-image-palette'
 import Grid from '@material-ui/core/Grid'
+import CloseButton from '../CloseButton'
 
 const styles = theme => ({
   paper: {
@@ -27,12 +28,13 @@ const styles = theme => ({
     width: '100%',
   },
   title: {
+    position:'absolute',
     fontWeight: 'bolder',
     fontSize: '3.5em',
     display: 'inline-block',
     borderRadius: 15,
     padding: "0px 10px",
-    paddingLeft: '10%',
+    paddingLeft: '7.5%',
     marginBottom: '5%',
     marginTop: '10%',
     boxShadow: "10px 5px 8px"
@@ -40,7 +42,7 @@ const styles = theme => ({
   info: {
     backgroundColor: 'rgba(255,255,255,.92)',
     marginTop:'auto',
-    width: 'auto',
+    width: '100%',
     height: '60%',
     position: 'absolute',
     top: 'auto',
@@ -50,9 +52,21 @@ const styles = theme => ({
   },
   bodyText: {
     color: 'black',
-    fontSize: '.85em',
+    fontSize: '1.2em',
     paddingLeft: theme.spacing.unit * 1,
     paddingRight: theme.spacing.unit * 1
+  },
+  inset:{
+    width:'75%',
+    display:'block',
+    margin:'auto'
+  },
+  button:{
+    margin: theme.spacing.unit,
+    float: "right",
+    position: "fixed",
+    right: "1em",
+    bottom: "1em"
   }
 });
 
@@ -60,19 +74,22 @@ function fromKey(key, val) {
   var out = "";
   switch (key) {
     case "gitref":
-      out = <a href={val}>View on Github</a>
+      out = <a href={val}>Github</a>
       break
     case "heroku":
-      out = <a href={val}>View on Heroku</a>
+      out = <a href={val}>Heroku</a>
       break
     case "role":
-      out = "Roles: " + val
+      out = <span><strong>Roles:</strong> {val}</span>
       break
     case "date":
       out = val
       break
     case "language":
-      out = <span>Primary languages: <code>{val}</code></span>
+      out = <span><strong>Primary languages:</strong> <code>{val}</code></span>
+      break
+    case "link":
+      out = <span><a href={val[1]}>{val[0]}</a></span>
       break
     default:
       out = "nodisplay"
@@ -106,15 +123,17 @@ class SimpleModal extends Component {
         {this.props.open ? <div className={classes.paper}>
           <ImagePalette image={"/images/" + card.src}>
             {({ backgroundColor, color, alternativeColor }) => (
-              <div style={{ backgroundColor, color, backgroundImage: 'url(images/' + card.src + ')', backgroundAttachment: 'scroll'}} className={classes.titlebar}>
+              <div style={{ backgroundColor:backgroundColor||"#ffffff", color:color||"#000000", backgroundImage: 'url(images/' + card.src + ')', backgroundAttachment: 'scroll'}} className={classes.titlebar}>
+                <CloseButton close={this.props.close.bind(this)} className={classes.button} />
                 <Typography className={classes.title} style={{ backgroundColor: "rgba(" + backgroundColor.slice(4, backgroundColor.length - 1) + ",.9)", color: alternativeColor }}>{card.title}</Typography>
                 <div className={classes.info}>
                   <Grid container spacing={0} className={classes.bodyText}>
-                    <Grid item xs={6}>
-                      {card.desc.map(p=><p>{p}</p>)}
+                    <Grid item xs={8}>
+                      {typeof card.desc == "string" ? <p>{card.desc}</p> : card.desc.map((p,index)=><p key={index}>{p}</p>)}
                     </Grid>
-                    <Grid item xs={6}>
-                      <ul>{Object.keys(card).map((key, index) => (fromKey(key) != "nodisplay" ? <li key={key}>{fromKey(key, card[key])}</li> : null))}</ul>
+                    <Grid item xs={4}>
+                      <ul>{Object.keys(card).map((key, index) => (fromKey(key, card[key]) != "nodisplay" ? <li key={key}>{fromKey(key, card[key])}</li> : null))}</ul>
+                      {card.inset ? <img src={"/images/"+card.src} className={classes.inset}/> : null}
                     </Grid>
                   </Grid>
                 </div>
