@@ -4,7 +4,7 @@
     "genre": [
       "web"
     ],
-    "desc": "Elbie (LB) is a bot I wrote to help run our sessions of Dungeon World, a rules-lite tabletop RPG in the vein of Dungeons and Dragons. As feature creep is wont to do, she quickly was found to need more than just dice rolling, and is now capable of tracking character statistics using a MongoDB database. We also thought it might be nice if she could play a character's theme song on command, for example, so now audio capabilities are being added. \nElbie is a passion project of mine, and I'm very proud of her -- not only does she function, but her entire architecture is built to be as extensible as possible, allowing people to write their own modules for her and easily include them. Her current incarnation is the third complete rewrite of her.",
+    "desc": ["Elbie (LB) is a bot I wrote to help run our sessions of Dungeon World, a rules-lite tabletop RPG in the vein of Dungeons and Dragons. As feature creep is wont to do, she quickly was found to need more than just dice rolling, and is now capable of tracking character statistics using a MongoDB database. We also thought it might be nice if she could play a character's theme song on command, for example, so now audio capabilities are being added.","Elbie is a passion project of mine, and I'm very proud of her -- not only does she function, but her entire architecture is built to be as extensible as possible, allowing people to write their own modules for her and easily include them. Her current incarnation is the third complete rewrite of her."],
     "src": "elbie.png",
     "role": "Solo project",
     "language": "Javascript, MongoDB",
