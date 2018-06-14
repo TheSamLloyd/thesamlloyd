@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import ImagePalette from 'react-image-palette'
+import Grid from '@material-ui/core/Grid'
 
 const styles = theme => ({
   paper: {
@@ -22,22 +23,55 @@ const styles = theme => ({
   titlebar:{
     backgroundSize:'cover',
     backgroundColor:'#000000',
-    paddingTop:'20%',
-    paddingLeft:'10%',
+    paddingTop:'15%',
     paddingBottom:'5%',
     margin:-theme.spacing.unit * 4,
-    marginBottom:'auto',
-    width:'100%'
+    height:'100%',
+    width:'110%'
   },
   title:{
     fontWeight:'bolder',
     fontSize: '3.5em',
     display:'inline-block',
     borderRadius:15,
-    padding:"0px 10px"
-  }
+    padding:"0px 10px",
+    paddingLeft:'10%',
+    marginBottom:'5%',
+    boxShadow:"10px 5px 8px"
+  },
+  info:{
+    backgroundColor:'rgba(255,255,255,.92)',
+    width:'95%',
+    height:'70%',
+    paddingLeft:theme.spacing.unit*2,
+    paddingRight:theme.spacing.unit*5
+  },
+
 });
 
+function fromKey(key){
+  var out = "";
+  switch(key){
+    case "gitref":
+      out="View on GitHub:"
+      break
+    case "heroku":
+      out="View on Heroku:"
+      break
+    case "role":
+      out="Roles:"
+      break
+    case "date":
+      out=""
+      break
+    case "language":
+      out="Primary languages:"
+      break
+    default:
+      out="nodisplay"
+  }
+  return out
+}
 
 class SimpleModal extends Component{
   constructor(props){
@@ -66,7 +100,17 @@ class SimpleModal extends Component{
               <ImagePalette image={"/images/"+card.src}>
     {({ backgroundColor, color, alternativeColor }) => (
       <div style={{backgroundColor, color, backgroundImage:'url(images/'+card.src+')'}} className={classes.titlebar}>
-        <Typography className={classes.title} style={{ backgroundColor:"rgba("+backgroundColor.slice(4,backgroundColor.length-1)+",.8)",color:alternativeColor}}>{card.title}</Typography>
+        <Typography className={classes.title} style={{ backgroundColor:"rgba("+backgroundColor.slice(4,backgroundColor.length-1)+",.9)",color:alternativeColor}}>{card.title}</Typography>
+        <div className={classes.info}>
+          <Grid container spacing={24}>
+            <Grid item xs={6}>
+              <Typography variant="body1">{card.desc}</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography><ul>{Object.keys(card).map(key=>(fromKey(key)!="nodisplay"?<li>{fromKey(key)+" "+card[key]}</li>:null))}</ul></Typography>
+            </Grid>
+          </Grid>
+        </div>
       </div>
     )}
   </ImagePalette>
