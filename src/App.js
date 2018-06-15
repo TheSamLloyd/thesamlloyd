@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CardGrid from './components/CardGrid'
 import TitleBar from './components/Titlebar'
 import './App.css';
-import { Divider } from '@material-ui/core';
 import ProjectDisplay from "./components/Modal"
 class App extends Component {
   constructor(){

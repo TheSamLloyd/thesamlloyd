@@ -129,11 +129,11 @@ class SimpleModal extends Component {
                 <div className={classes.info}>
                   <Grid container spacing={0} className={classes.bodyText}>
                     <Grid item xs={8}>
-                      {typeof card.desc == "string" ? <p>{card.desc}</p> : card.desc.map((p,index)=><p key={index}>{p}</p>)}
+                      {typeof card.desc === "string" ? <p>{card.desc}</p> : card.desc.map((p,index)=><p key={index}>{p}</p>)}
                     </Grid>
                     <Grid item xs={4}>
-                      <ul>{Object.keys(card).map((key, index) => (fromKey(key, card[key]) != "nodisplay" ? <li key={key}>{fromKey(key, card[key])}</li> : null))}</ul>
-                      {card.inset ? <img src={"/images/"+card.src} className={classes.inset}/> : null}
+                      <ul>{Object.keys(card).map((key, index) => (fromKey(key, card[key]) !== "nodisplay" ? <li key={key}>{fromKey(key, card[key])}</li> : null))}</ul>
+                      {card.inset ? <img src={"/images/"+card.src} className={classes.inset} alt="inset"/> : null}
                     </Grid>
                   </Grid>
                 </div>

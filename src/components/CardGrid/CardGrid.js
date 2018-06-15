@@ -1,6 +1,6 @@
 import React from "react"
 import Project from "../Project"
-import { Grid, Typography, Divider } from "@material-ui/core"
+import Grid from "@material-ui/core/Grid"
 import "./cardgrid.css"
 const projects = require("../../projects.json")
 function hasOne(array, test) {
