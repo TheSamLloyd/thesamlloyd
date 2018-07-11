@@ -91,6 +91,12 @@ function fromKey(key, val) {
     case "link":
       out = <span><a href={val[1]}>{val[0]}</a></span>
       break
+    case "text":
+      out= val
+      break
+    case "address":
+      out = val.join("\n")
+      break
     default:
       out = "nodisplay"
   }

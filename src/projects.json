@@ -13,7 +13,9 @@
       "samlloydj@gmail.com",
       "mailto://samlloydj@gmail.com"
     ],
-    "src": "presentation.jpg"
+    "text": "603-828-8298",
+    "src": "presentation.jpg",
+    "address": ["North Hampton,", "New Hampshire"]
   },
   {
     "title": "Work History",
@@ -99,7 +101,7 @@
       "A personal icon, James Murphy of LCD Soundsystem famously noted in \"Losing My Edge\" that the kids he sees \"coming up from behind\" in the music scene have \"borrowed nostalgia for the unremembered 80s\", which was such a damning indictment of my interests that it could have been written about me specfically."
     ],
     "src": "reactmemory.png",
-    "language":"Javascript, React",
+    "language": "Javascript, React",
     "gitref": "https://github.com/TheSamLloyd/react-memory",
     "heroku": "http://react-memory-80s.herokuapp.com"
   },
@@ -108,27 +110,38 @@
     "genre": [
       "academic"
     ],
-    "desc": ["For my senior capstone project, I studied the Hermite polynomials, ostensibly to gain an insight into orthogonality as it could be applied to signal processing and wavelet theory. The Hermite functions are orthogonal over the whole real line with respect to an exponential weighting function. As I worked with them, I found that they could be used to approximate any continuous function function on the real line, using a similar approach that one would take to derive a Fourier series.","More work on the project showed that there was a previously-undiscovered relationship between the coefficient of the Hermite polynomial of degree n and the degree-n derivative of the function, which allowed a method of calculating Hermite coefficients that actually did not use the Hermite polynomials in any way, and allowed us to construct efficient, powerful approximations of continuous and continuously-differentiable functions that were better (from a sum-squared error perspective) than a Taylor series over a given interval.","I presented this research at the undergraduate conference Ithaca College holds every year, the Whalen Seminar, and won the award for Mathematics that year, which was a huge honor!"],
-    "src":"hermite.png",
-    "date":"2016"
+    "desc": [
+      "For my senior capstone project, I studied the Hermite polynomials, ostensibly to gain an insight into orthogonality as it could be applied to signal processing and wavelet theory. The Hermite functions are orthogonal over the whole real line with respect to an exponential weighting function. As I worked with them, I found that they could be used to approximate any continuous function function on the real line, using a similar approach that one would take to derive a Fourier series.",
+      "More work on the project showed that there was a previously-undiscovered relationship between the coefficient of the Hermite polynomial of degree n and the degree-n derivative of the function, which allowed a method of calculating Hermite coefficients that actually did not use the Hermite polynomials in any way, and allowed us to construct efficient, powerful approximations of continuous and continuously-differentiable functions that were better (from a sum-squared error perspective) than a Taylor series over a given interval.",
+      "I presented this research at the undergraduate conference Ithaca College holds every year, the Whalen Seminar, and won the award for Mathematics that year, which was a huge honor!"
+    ],
+    "src": "hermite.png",
+    "date": "2016"
   },
   {
     "title": "Higher-Dimension Polyhedra",
     "genre": [
       "academic"
     ],
-    "desc": ["In my sophomore year, I developed a formula for determining the value of an n-dimensional figurate number corresponding to certain categories of pyramidal numbers.","Since, for example, the triangular numbers (1,3,6,10,...) are formed by summing the natural numbers and the tetrahedral numbers (triangular pyramid) are formed by summing the triangular numbers, we can extend this approach to both pyramidal number with an arbitrary amount of sides (11, for example) and pyramids in arbitrarily high dimensions (11, for example).","What was pleasantly notable about this project was the fact that the formula made use of a relation I had developed freshman year involving Pascal's Triangle and arbitrary \"seeds\" for it. That allowed me to use a combinatoric approach to prove my new formula!"],
+    "desc": [
+      "In my sophomore year, I developed a formula for determining the value of an n-dimensional figurate number corresponding to certain categories of pyramidal numbers.",
+      "Since, for example, the triangular numbers (1,3,6,10,...) are formed by summing the natural numbers and the tetrahedral numbers (triangular pyramid) are formed by summing the triangular numbers, we can extend this approach to both pyramidal number with an arbitrary amount of sides (11, for example) and pyramids in arbitrarily high dimensions (11, for example).",
+      "What was pleasantly notable about this project was the fact that the formula made use of a relation I had developed freshman year involving Pascal's Triangle and arbitrary \"seeds\" for it. That allowed me to use a combinatoric approach to prove my new formula!"
+    ],
     "src": "graph3.png",
-    "date":"2014"
+    "date": "2014"
   },
   {
     "title": "Golden Ratios beyond ϕ",
     "genre": [
       "academic"
     ],
-    "desc": ["Throughout my college career, I had dallied in trying to solve the problem of golden ratios in m-bonacci sequences. In the classical Fibonacci series, one sums the two previous terms to get the next term, and the ratio between successive terms approaches approximately 1.618. If one instead sums the previous three terms, the ratio between successive terms approaches roughly 1.8393. What I wondered was if there was a good way to derive that value directly from the number of terms.","I made a lot of progress on answering that question, and from my latest work, the answer appears to be \"no\". However, I was able to note some interesting relations and discover an equation for the inverse, which given the ratio tells you the number of terms, a less exciting relation."],
-    "src":"phi.png",
-    "date":"2015"
+    "desc": [
+      "Throughout my college career, I had dallied in trying to solve the problem of golden ratios in m-bonacci sequences. In the classical Fibonacci series, one sums the two previous terms to get the next term, and the ratio between successive terms approaches approximately 1.618. If one instead sums the previous three terms, the ratio between successive terms approaches roughly 1.8393. What I wondered was if there was a good way to derive that value directly from the number of terms.",
+      "I made a lot of progress on answering that question, and from my latest work, the answer appears to be \"no\". However, I was able to note some interesting relations and discover an equation for the inverse, which given the ratio tells you the number of terms, a less exciting relation."
+    ],
+    "src": "phi.png",
+    "date": "2015"
   },
   {
     "title": "Recreating Density Functions",
@@ -136,9 +149,9 @@
       "academic"
     ],
     "desc": "Using techniques from statistics and best-fit analysis, combined with what I had learned about probability distributions, I began developing a technique to recreate probability distributions from a list of their moments. Motivating this research were questions like \"what does a distribution have kurtosis 4 look like versus kurtosis 10?\" and \"what distribution could have generated this data?\" These techniques are fairly specialized and work best on certain families of distributions, but they use essentially the same theory behind fitting polynomials to data, just applied in novel ways.",
-    "src":"moments.png",
-    "date":"2017",
-    "language":"Wolfram Mathematica"
+    "src": "moments.png",
+    "date": "2017",
+    "language": "Wolfram Mathematica"
   },
   {
     "title": "The Cavalcade of Sin",
@@ -179,7 +192,10 @@
     "genre": [
       "misc"
     ],
-    "desc":["In my ever-decreasing amount of spare time, I also homebrew beers, ciders, and meads! And what's more is they're actually pretty good!","This particular image is a logo I made for our beer \"2udy\" (pronounced \"two-dee\"), a spiritual successor to our first beer, though made with a recipe we promptly lost and ingredients that we managed to lose the labels for immediately afterward, making this mysteriously tasty brew impossible to replicate. The design, of course, comes from the iconic post for \"Plan 9 From Outer Space\", although I am now reasonably certain that all of our materials were terrestrial."],
+    "desc": [
+      "In my ever-decreasing amount of spare time, I also homebrew beers, ciders, and meads! And what's more is they're actually pretty good!",
+      "This particular image is a logo I made for our beer \"2udy\" (pronounced \"two-dee\"), a spiritual successor to our first beer, though made with a recipe we promptly lost and ingredients that we managed to lose the labels for immediately afterward, making this mysteriously tasty brew impossible to replicate. The design, of course, comes from the iconic post for \"Plan 9 From Outer Space\", although I am now reasonably certain that all of our materials were terrestrial."
+    ],
     "src": "2udy.jpg",
     "inset": true
   },
@@ -189,10 +205,11 @@
       "web"
     ],
     "desc": [
-      "This portfolio represents a culmination of a lot of my web design ability and sensibilities. Those animated mouseovers! Those smart filtering buttons! That mobile-first design!","Mostly I just wanted to have a link to this portfolio on Github so that you could see the source for yourself, if you were so inclined."
+      "This portfolio represents a culmination of a lot of my web design ability and sensibilities. Those animated mouseovers! Those smart filtering buttons! That mobile-first design!",
+      "Mostly I just wanted to have a link to this portfolio on Github so that you could see the source for yourself, if you were so inclined."
     ],
-    "language":"Javascript, React",
+    "language": "Javascript, React",
     "src": "portfolio.png",
-    "gitref":"https://github.com/TheSamLloyd/thesamlloyd"
+    "gitref": "https://github.com/TheSamLloyd/thesamlloyd"
   }
 ]
