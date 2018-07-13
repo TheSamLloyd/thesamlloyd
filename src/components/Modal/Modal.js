@@ -74,10 +74,10 @@ function fromKey(key, val) {
   var out = "";
   switch (key) {
     case "gitref":
-      out = <a href={val}>Github</a>
+      out = <a href={val}>View on Github</a>
       break
     case "heroku":
-      out = <a href={val}>Heroku</a>
+      out = <a href={val}>View on Heroku</a>
       break
     case "role":
       out = <span><strong>Roles:</strong> {val}</span>
@@ -86,7 +86,7 @@ function fromKey(key, val) {
       out = val
       break
     case "language":
-      out = <span><strong>Primary languages:</strong> <code>{val}</code></span>
+      out = <span><strong>Primary languages:</strong> {val} </span>
       break
     case "link":
       out = <span><a href={val[1]}>{val[0]}</a></span>
