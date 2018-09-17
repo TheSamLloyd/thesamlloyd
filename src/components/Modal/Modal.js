@@ -6,6 +6,9 @@ import Modal from '@material-ui/core/Modal';
 import ImagePalette from 'react-image-palette'
 import Grid from '@material-ui/core/Grid'
 import CloseButton from '../CloseButton'
+import cloudinary from 'cloudinary-core'
+
+const cloudinaryCore = new cloudinary.Cloudinary({ cloud_name: 'elbie' });
 
 const styles = theme => ({
   paper: {
@@ -119,6 +122,7 @@ class SimpleModal extends Component {
   render() {
     const { classes } = this.props;
     const card = this.props.self
+    const url = card ? cloudinaryCore.url('thesamlloyd/' + card.src, { quality: "auto", fetchFormat: "auto", dpr: 'auto', width: 'auto' }) : null;
     return (
       <Modal
         aria-labelledby="simple-modal-title"
@@ -127,9 +131,9 @@ class SimpleModal extends Component {
         onClose={this.handleClose}
       >
         {this.props.open ? <div className={classes.paper}>
-          <ImagePalette image={"/images/" + card.src}>
+          <ImagePalette image={url} crossOrigin={true}>
             {({ backgroundColor, color, alternativeColor }) => (
-              <div style={{ backgroundColor:backgroundColor||"#ffffff", color:color||"#000000", backgroundImage: 'url(images/' + card.src + ')', backgroundAttachment: 'scroll'}} className={classes.titlebar}>
+              <div style={{ backgroundColor: backgroundColor || "#ffffff", color: color || "#000000", backgroundImage: 'url(' + url+ ')', backgroundAttachment: 'scroll'}} className={classes.titlebar}>
                 <CloseButton close={this.props.close.bind(this)} className={classes.button} />
                 <Typography className={classes.title} style={{ backgroundColor: "rgba(" + backgroundColor.slice(4, backgroundColor.length - 1) + ",.9)", color: alternativeColor }}>{card.title}</Typography>
                 <div className={classes.info}>
@@ -139,7 +143,7 @@ class SimpleModal extends Component {
                     </Grid>
                     <Grid item xs={4}>
                       <ul>{Object.keys(card).map((key, index) => (fromKey(key, card[key]) !== "nodisplay" ? <li key={key}>{fromKey(key, card[key])}</li> : null))}</ul>
-                      {card.inset ? <img src={"/images/"+card.src} className={classes.inset} alt="inset"/> : null}
+                      {card.inset ? <img src={url} className={classes.inset} alt="inset"/> : null}
                     </Grid>
                   </Grid>
                 </div>

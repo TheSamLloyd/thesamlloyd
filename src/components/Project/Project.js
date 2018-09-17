@@ -5,6 +5,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from "@material-ui/core/Grid"
+import cloudinary from 'cloudinary-core'
+const cloudinaryCore = new cloudinary.Cloudinary({ cloud_name: 'elbie' });
+
 const styles = (theme)=>({
   card: {
     maxWidth: 345,
@@ -75,7 +78,7 @@ class Project extends Component {
     const { classes } = this.props;
     return (
       <Grid item xs={6} sm={4} md={3} lg={2}>
-        <Card className={classes.card} style={{ backgroundImage: "url(images/" + this.props.src + ")" }} onMouseOver={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}
+        <Card className={classes.card} style={{ backgroundImage: "url(" + cloudinaryCore.url('thesamlloyd/' + this.props.src, { quality: "auto", fetchFormat: "auto", dpr:'auto', width:'auto' }) + ")" }} onMouseOver={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}
         onClick={(e)=>this.props.triggerModal(this.props.self)}>
           <CardContent className={classes.content}>
             <div className={this.state.mouseOn ? classes.overlayHover : classes.overlay}></div>
