@@ -85,7 +85,7 @@ class Project extends Component {
             <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg" style={{position:"relative"}}>
             <polygon points="50,0 6.698,25, 6.698,75 50,100 93.3,75 93.3,25" className={classes.polygon} stroke="white" opacity={.7}/>
               <foreignObject x="7.5" y="25" width="85" height="50">
-              <Typography className={classes.title} variant="headline"xmlns="http://www.w3.org/1999/xhtml">{this.props.title}</Typography>
+              <Typography className={classes.title} variant="h3"xmlns="http://www.w3.org/1999/xhtml">{this.props.title}</Typography>
               </foreignObject>
             </svg>
           </CardContent>

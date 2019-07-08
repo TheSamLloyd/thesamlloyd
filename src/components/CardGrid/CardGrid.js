@@ -14,7 +14,7 @@ function CardGrid(props) {
   const { genre } = props
   const cards = !genre.length ? projects : projects.filter(project => hasOne(project.genre, genre))
   return (
-    <Grid container spacing={24} id="container">
+    <Grid container spacing={3} id="container">
       {cards.map((card,id) => (
         <Project title={card.title} src={card.src} key={id} triggerModal={props.triggerModal} self={card}/>
       ))}

@@ -20,13 +20,12 @@ const styles = theme => ({
     right: '7.5%',
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing.unit * 0,
+    padding: 0,
     borderRadius: 25,
     overflow:'hidden'
   },
   titlebar: {
     backgroundSize: 'cover',
-    // margin: -theme.spacing.unit * 4,
     height: '100%',
     width: '100%',
   },
@@ -56,8 +55,8 @@ const styles = theme => ({
   bodyText: {
     color: 'black',
     fontSize: '1.2em',
-    paddingLeft: theme.spacing.unit * 1,
-    paddingRight: theme.spacing.unit * 1
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1)
   },
   inset:{
     width:'75%',
@@ -65,7 +64,7 @@ const styles = theme => ({
     margin:'auto'
   },
   button:{
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
     float: "right",
     position: "fixed",
     right: "1em",

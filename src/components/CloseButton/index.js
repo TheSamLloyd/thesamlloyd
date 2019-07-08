@@ -6,7 +6,7 @@ import Cancel from '@material-ui/icons/Cancel';
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
     float: "right",
     position: "absolute",
     right: "0em",
@@ -18,7 +18,7 @@ function FloatingActionButtons(props) {
   const { classes } = props;
   return (
     <div>
-      <Button variant="fab" color="default" aria-label="add" className={classes.button} align="right" onClick={props.close}>
+      <Button variant="text" color="default" aria-label="add" className={classes.button} align="right" onClick={props.close}>
         <Cancel />
       </Button>
     </div>
